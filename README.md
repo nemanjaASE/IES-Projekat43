@@ -1,1 +1,3 @@
 # IES-Projekat43
+
+![DIJAGRAM](FTN_43_DIJAGRAM.bmp)
