@@ -11,36 +11,36 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
 {
 	public class Equipment : PowerSystemResource
 	{		
-		private bool isUnderground;
-		private bool isPrivate;
+		private bool aggregate;
+		private bool normallyInService;
 						
 		public Equipment(long globalId) : base(globalId) 
 		{
 		}
 	
-		public bool IsUnderground
+		public bool Aggregate
 		{
 			get
 			{
-				return isUnderground;
+				return aggregate;
 			}
 
 			set
 			{
-				isUnderground = value;
+				aggregate = value;
 			}
 		}
 
-		public bool IsPrivate
+		public bool NormallyInService
 		{
 			get 
 			{
-				return isPrivate; 
+				return normallyInService; 
 			}
 			
 			set
 			{ 
-				isPrivate = value; 
+				normallyInService = value; 
 			}
 		}
 
@@ -49,8 +49,8 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
 			if (base.Equals(obj))
 			{
 				Equipment x = (Equipment)obj;
-				return ((x.isUnderground == this.isUnderground) &&
-						(x.isPrivate == this.isPrivate));
+				return ((x.aggregate == this.aggregate) &&
+						(x.normallyInService == this.normallyInService));
 			}
 			else
 			{
@@ -69,8 +69,8 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
 		{
 			switch (property)
 			{
-				case ModelCode.EQUIPMENT_ISUNDERGROUND:
-				case ModelCode.EQUIPMENT_ISPRIVATE:
+				case ModelCode.EQUIPMENT_AGGREGATE:
+				case ModelCode.EQUIPMENT_NORMALLYINSERVICE:
 		
 					return true;
 				default:
@@ -82,12 +82,12 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
 		{
 			switch (property.Id)
 			{
-				case ModelCode.EQUIPMENT_ISUNDERGROUND:
-					property.SetValue(isUnderground);
+				case ModelCode.EQUIPMENT_AGGREGATE:
+					property.SetValue(aggregate);
 					break;
 
-				case ModelCode.EQUIPMENT_ISPRIVATE:
-					property.SetValue(isPrivate);
+				case ModelCode.EQUIPMENT_NORMALLYINSERVICE:
+					property.SetValue(normallyInService);
 					break;			
 
 				default:
@@ -100,12 +100,12 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
 		{
 			switch (property.Id)
 			{
-				case ModelCode.EQUIPMENT_ISUNDERGROUND:					
-					isUnderground = property.AsBool();
+				case ModelCode.EQUIPMENT_AGGREGATE:					
+					aggregate = property.AsBool();
 					break;
 
-				case ModelCode.EQUIPMENT_ISPRIVATE:
-					isPrivate = property.AsBool();
+				case ModelCode.EQUIPMENT_NORMALLYINSERVICE:
+					normallyInService = property.AsBool();
 					break;
 			
 				default:

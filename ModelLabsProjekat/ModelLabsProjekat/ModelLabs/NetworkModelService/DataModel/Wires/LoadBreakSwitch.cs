@@ -1,23 +1,17 @@
-﻿using System;
+﻿using FTN.Common;
+using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
-using FTN.Common;
 
-
-
-namespace FTN.Services.NetworkModelService.DataModel.Core
+namespace FTN.Services.NetworkModelService.DataModel.Wires
 {
-	public class PowerSystemResource : IdentifiedObject
-	{	
-		
-		public PowerSystemResource(long globalId)
-			: base(globalId)
-		{
-		}	
-
+    public class LoadBreakSwitch : ProtectedSwitch
+    {
+        public LoadBreakSwitch(long globalId)
+           : base(globalId)
+        {
+        }
 		public override bool Equals(object obj)
 		{
 			if (base.Equals(obj))
@@ -33,26 +27,27 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
 		public override int GetHashCode()
 		{
 			return base.GetHashCode();
-		}		
+		}
 
 		#region IAccess implementation
 
-		public override bool HasProperty(ModelCode property)
+		public override bool HasProperty(ModelCode t)
 		{
-			return base.HasProperty(property);
+			return base.HasProperty(t);
 		}
 
-		public override void GetProperty(Property property)
+		public override void GetProperty(Property prop)
 		{
-			base.GetProperty(property);
+			base.GetProperty(prop);
 		}
 
 		public override void SetProperty(Property property)
 		{
+
 			base.SetProperty(property);
+
 		}
 
 		#endregion IAccess implementation
-		
 	}
 }
