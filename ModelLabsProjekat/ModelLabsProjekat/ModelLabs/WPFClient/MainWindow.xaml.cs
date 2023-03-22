@@ -248,15 +248,6 @@ namespace WPFClient
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
-        public static List<ModelCode> GetDMS(DMSType dmstip)
-        {
-            ModelResourcesDesc modResDes = new ModelResourcesDesc();
-            List<ModelCode> lista = modResDes.GetAllPropertyIds(dmstip);
-
-            DMSType propertyCode = ModelResourcesDesc.GetTypeFromModelCode(list);
-
-            return lista;
-        }
         public static List<ModelCode> FindAttributesByGID(long gid)
         {
             ModelResourcesDesc modResDes = new ModelResourcesDesc();
