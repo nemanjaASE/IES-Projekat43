@@ -9,8 +9,8 @@ namespace FTN.Services.NetworkModelService.DataModel.LoadModel
 {
     public class Season : IdentifiedObject
     {
-		private DateTime endDate = DateTime.Now;
-		private DateTime startDate = DateTime.Now;
+		private DateTime endDate;
+		private DateTime startDate;
 		private List<long> seasonDayTypeSchedules = new List<long>();
 
 		public Season(long globalId)
@@ -40,7 +40,7 @@ namespace FTN.Services.NetworkModelService.DataModel.LoadModel
 			{
 				Season x = (Season)obj;
 				return (x.endDate == this.endDate &&
-					    x.startDate == this.startDate &&
+						x.startDate == this.startDate &&
 						CompareHelper.CompareLists(x.SeasonDayTypeSchedules, this.SeasonDayTypeSchedules, true));
 			}
 			else

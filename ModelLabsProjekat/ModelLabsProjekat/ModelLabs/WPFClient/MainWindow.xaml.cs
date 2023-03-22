@@ -404,7 +404,6 @@ namespace WPFClient
                 l.Add((ModelCode)v);
             }
 
-
             richTextBox_1.Text = new Konekcija().GetValues(Gid1, l);
         }
 
@@ -421,7 +420,8 @@ namespace WPFClient
             {
                 l.Add((ModelCode)v);
             }
-            richTextBox_2.Text = new Konekcija().GetExtentValues(ModelKod2, l);
+
+            richTextBox_2.Text = new Konekcija().GetExtentValues(ModelKod2, l); ;
         }
 
         private void button_3_Click(object sender, RoutedEventArgs e)
@@ -443,7 +443,7 @@ namespace WPFClient
             association.PropertyId = AtributID;
             association.Type = Tip;
 
-            richTextBox_3.Text = new Konekcija().GetRelatedValues(Gid3, association, l);
+            richTextBox_3.Text = new Konekcija().GetRelatedValues(Gid3, association, l); ;
         }
     }
 }

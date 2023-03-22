@@ -8,7 +8,7 @@ namespace FTN.Services.NetworkModelService.DataModel.Core
 {
     public class BasicIntervalSchedule : IdentifiedObject
     {
-        private DateTime startTime = DateTime.Now;
+		private DateTime startTime;
         public BasicIntervalSchedule(long globalId) 
             : base(globalId)
         {

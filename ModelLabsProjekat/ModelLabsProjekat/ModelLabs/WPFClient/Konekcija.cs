@@ -60,10 +60,14 @@ namespace WPFClient
                     switch (p.Type)
                     {
                         case PropertyType.Float:
-                            ss += String.Format(" {0}:\n", p.AsFloat());
+                            ss += String.Format(" {0}\n", p.AsFloat());
                             break;
                         case PropertyType.Bool:
+                            ss += String.Format(" {0}\n", p.AsBool());
+                            break;
                         case PropertyType.Int32:
+                            ss += String.Format(" {0}\n", p.AsInt());
+                            break;
                         case PropertyType.Int64:
                         case PropertyType.DateTime:
                             if (p.Id == ModelCode.IDOBJ_GID)
@@ -72,7 +76,7 @@ namespace WPFClient
                             }
                             else
                             {
-                                ss += String.Format("{0}\n", p.AsLong());
+                                ss += String.Format("{0}\n", (new DateTime(p.AsLong()).ToString("yyyy-MM-dd")));
                             }
 
                             break;
@@ -162,10 +166,14 @@ namespace WPFClient
                                 switch (p.Type)
                                 {
                                     case PropertyType.Float:
-                                        ss += String.Format(" {0}:\n", p.AsFloat());
+                                        ss += String.Format(" {0}\n", p.AsFloat());
                                         break;
                                     case PropertyType.Bool:
+                                        ss += String.Format(" {0}\n", p.AsBool());
+                                        break;
                                     case PropertyType.Int32:
+                                        ss += String.Format(" {0}\n", p.AsInt());
+                                        break;
                                     case PropertyType.Int64:
                                     case PropertyType.DateTime:
                                         if (p.Id == ModelCode.IDOBJ_GID)
@@ -174,7 +182,7 @@ namespace WPFClient
                                         }
                                         else
                                         {
-                                            ss += String.Format("{0}\n", p.AsLong());
+                                            ss += String.Format("{0}\n", (new DateTime(p.AsLong()).ToString("yyyy-MM-dd")));
                                         }
                                         break;
                                     case PropertyType.Reference:
@@ -260,10 +268,14 @@ namespace WPFClient
                                 switch (p.Type)
                                 {
                                     case PropertyType.Float:
-                                        ss += String.Format(" {0}:\n", p.AsFloat());
+                                        ss += String.Format(" {0}\n", p.AsFloat());
                                         break;
                                     case PropertyType.Bool:
+                                        ss += String.Format(" {0}\n", p.AsBool());
+                                        break;
                                     case PropertyType.Int32:
+                                        ss += String.Format(" {0}\n", p.AsInt());
+                                        break;
                                     case PropertyType.Int64:
                                     case PropertyType.DateTime:
                                         if (p.Id == ModelCode.IDOBJ_GID)
@@ -272,7 +284,7 @@ namespace WPFClient
                                         }
                                         else
                                         {
-                                            ss += String.Format("{0}\n", p.AsLong());
+                                            ss += String.Format("{0}\n", (new DateTime(p.AsLong()).ToString("yyyy-MM-dd")));
                                         }
                                         break;
                                     case PropertyType.Reference:
